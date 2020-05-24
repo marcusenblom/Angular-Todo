@@ -10,25 +10,16 @@ export class TodoListComponent implements OnInit {
 
   constructor() { }
 
-  todos: Todo[] = [{id: 1, title: "Todo 1", complete: false}, {id: 2, title: "Todo 2", complete: false}, {id: 3, title: "Todo 3", complete: false}];
+  todos: Todo[] = [{id: 1, title: "Snooze u lose", complete: false}, {id: 2, title: "Brush them teeth", complete: false}, {id: 3, title: "Pancakes for tomorrow", complete: false}];
 
-  createNewPlaceholder: string = "Create new todo";
+  addNewTodo(titleFromInput: string){
 
-  addNewTodo(){
-
-    // "So a solution is to cast the result of getElementById() to HTMLInputElement like this:"
-    let inputField = (<HTMLInputElement>document.getElementById("new-todo-input"));
-    let inputValue = inputField.value;
-
-    if (inputValue.length > 0) {
-      let newTodo: Todo = new Todo();
-      newTodo.id = this.todos.length + 1;
-      newTodo.title = inputValue;
-      newTodo.complete = false;
-
+    if (titleFromInput.length > 0) {
+      let newTodo: Todo = new Todo(this.todos.length + 1, titleFromInput, false);
       this.todos.push(newTodo);
 
       // Resets field value to ""
+      let inputField = (<HTMLInputElement>document.getElementById("new-todo-input"));
       inputField.value = "";
     }
   }
@@ -42,8 +33,18 @@ export class TodoListComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
+  sorted: boolean = false;
+  sortTodos() {
+    if (!this.sorted) {
+      this.todos.sort((a: Todo,b: Todo) => a.title.localeCompare(b.title));
+      this.sorted = true;
+    } else {
+      this.todos.sort((a: Todo,b: Todo) => b.title.localeCompare(a.title));
+      this.sorted = false;
+    }
+  }
 
+  ngOnInit(): void {
   }
 
 }

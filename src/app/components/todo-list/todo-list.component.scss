@@ -13,6 +13,7 @@
     h1 {
       text-align: center;
       width: 100%;
+      font-size: 3.5rem;
     }
 
     .new-todo {
@@ -23,6 +24,27 @@
       input {
         width: 40%;
         height: 30px;
+        margin-right: 8px;
+        font-size: larger;
+      }
+      button {
+        height: 30px;
+        padding: 0 20px;
+      }
+    }
+
+    .button-info-container {
+      width: 90%;
+      padding: 10px 20px 0 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: larger;
+
+      .button-info {
+        span {
+          margin: 0 8px 0 20px;
+        }
+
       }
     }
 
@@ -35,6 +57,10 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
+      }
+
+      button {
+        font-size: larger;
       }
     }
 
