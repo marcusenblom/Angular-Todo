@@ -1,0 +1,46 @@
+.body-container{
+  display: flex;
+  justify-content: center;
+
+ .container-main {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 900px;
+
+    h1 {
+      text-align: center;
+      width: 100%;
+    }
+
+    .new-todo {
+      display: flex;
+      justify-content: center;
+      width: 90%;
+
+      input {
+        width: 40%;
+        height: 30px;
+      }
+    }
+
+    .container-active {
+      padding: 5px;
+      width: 90%;
+      min-height: 200px;
+
+      .info-text {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .container-complete {
+      padding: 5px;
+      width: 90%;
+    }
+  }
+}
