@@ -12,15 +12,13 @@ export class TodoItemComponent implements OnInit {
 
   @Input() todo: Todo;
   @Output() remove: EventEmitter<Todo> = new EventEmitter<Todo>();
-  @Output() changeStatus: EventEmitter<Todo> = new EventEmitter<Todo>();
 
   removeMe(){
     this.remove.emit(this.todo);
   }
 
-  alertStatus(){
+  changeStatus(){
     this.todo.complete = !this.todo.complete;
-    this.changeStatus.emit(this.todo)
   }
 
   ngOnInit(): void {
