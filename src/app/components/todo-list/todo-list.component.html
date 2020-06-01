@@ -19,7 +19,7 @@
 
   <div class="container-active">
     <div class="todo-active" *ngFor="let todo of todos">
-      <app-todo-item *ngIf="!todo.complete" [todo]="todo" (remove)="removeTodo(todo)"></app-todo-item>
+      <app-todo-item *ngIf="!todo.complete" [todo]="todo" (remove)="removeTodo(todo)" (toggle)="toggleTodo(todo)"></app-todo-item>
     </div>
     <button type="button" class="btn btn-light" (click)="sortTodos()">Sort</button>
   </div>
@@ -28,7 +28,7 @@
 
   <div class="container-complete">
     <div class="todo-complete" *ngFor="let todo of todos">
-      <app-todo-item *ngIf="todo.complete" [todo]="todo" (remove)="removeTodo(todo)"></app-todo-item>
+      <app-todo-item *ngIf="todo.complete" [todo]="todo" (remove)="removeTodo(todo)" (toggle)="toggleTodo(todo)"></app-todo-item>
     </div>
   </div>
   </div>

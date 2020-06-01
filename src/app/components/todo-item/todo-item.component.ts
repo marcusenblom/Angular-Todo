@@ -12,13 +12,14 @@ export class TodoItemComponent implements OnInit {
 
   @Input() todo: Todo;
   @Output() remove: EventEmitter<Todo> = new EventEmitter<Todo>();
+  @Output() toggle: EventEmitter<Todo> = new EventEmitter<Todo>();
 
   removeMe(){
     this.remove.emit(this.todo);
   }
 
-  changeStatus(){
-    this.todo.complete = !this.todo.complete;
+  toggleMe(){
+    this.toggle.emit(this.todo);
   }
 
   ngOnInit(): void {

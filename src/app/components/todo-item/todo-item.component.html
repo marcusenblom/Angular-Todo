@@ -3,7 +3,7 @@
     <h3>{{todo.title}}</h3>
   </div>
   <div class="button-container">
-    <input type="checkbox" [checked]="todo.complete" (click)="changeStatus()">
+    <input type="checkbox" [checked]="todo.complete" (click)="toggleMe()">
   <button type="button" class="btn btn-light" (click)="removeMe()">delete</button>
   </div>
 

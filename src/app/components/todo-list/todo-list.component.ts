@@ -33,6 +33,10 @@ export class TodoListComponent implements OnInit {
     }
   }
 
+  toggleTodo(todo: Todo){
+    todo.complete = !todo.complete;
+  }
+
   sorted: boolean = false;
   sortTodos() {
     if (!this.sorted) {
